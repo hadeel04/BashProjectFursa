@@ -12,9 +12,9 @@ export COURSE_ID="DevOpsFursa"
 # Check .token file permissions
 if [ -f ~/.token ]; then
     # Get the permissions of the .token file in octal format
-    PERMISSIONS=$(stat -c %a ~/.token)
+    PERMISSIONS=$(stat -c "%a" ~/.token)
     # Get the permissions of the .token file in octal format
-    if [ $PERMISSIONS != "600" ]; then
+    if [ "$PERMISSIONS" != "600" ]; then
         echo "Warning: .token file has too open permissions"
     fi
 fi
