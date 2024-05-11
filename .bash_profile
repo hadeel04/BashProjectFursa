@@ -10,6 +10,7 @@ export COURSE_ID="DevOpsFursa"
 # Check .token file permissions
 if [ -f ~/.token ]; then
     PERMISSIONS=$(stat -c %a ~/.token)
+    echo "$PERMISSIONS"
     if [ "$PERMISSIONS" != "600" ]; then
         echo "Warning: .token file has too open permissions"
     fi
