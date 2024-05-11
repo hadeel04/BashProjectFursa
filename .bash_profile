@@ -8,9 +8,11 @@ echo "Hello $USER"
 export COURSE_ID="DevOpsFursa"
 
 
-# Check .token file permissions
+# Check .token file if exists
 if [ -f ~/.token ]; then
+    # Get the permissions of the .token file in octal format
     PERMISSIONS=$(stat -c %a ~/.token)
+    # Check if permissions are not equal to 600
     if [ "$PERMISSIONS" != "600" ]; then
         echo "Warning: .token file has too open permissions"
     fi
