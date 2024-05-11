@@ -10,8 +10,11 @@ export COURSE_ID="DevOpsFursa"
 
 
 # Check .token file permissions
-if [ -f ~/.token ] && [ $(stat -c %a ~/.token) != 600 ]; then
-    echo "Warning: .token file has too open permissions"
+if [ -f ~/.token ]; then
+    PERMISSIONS=$(stat -c %a ~/.token)
+    if [ "$PERMISSIONS" != "600" ]; then
+        echo "Warning: .token file has too open permissions"
+    fi
 fi
 
 # Set umask
