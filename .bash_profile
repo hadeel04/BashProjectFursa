@@ -7,7 +7,7 @@ echo "Hello $USER"
 # Define COURSE_ID environment variable
 export COURSE_ID="DevOpsFursa"
 
-ls -la
+
 # Check .token file permissions
 if [ -f ~/.token ]; then
     PERMISSIONS=$(stat -c %a ~/.token)
